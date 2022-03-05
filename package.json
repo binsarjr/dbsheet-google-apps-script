@@ -1,0 +1,9 @@
+{
+  "name": "dbsheet",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@types/google-apps-script": "^1.0.45"
+  }
+}
