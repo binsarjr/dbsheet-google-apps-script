@@ -32,8 +32,40 @@ function testUser() {
 
   // Get all data which email is 'binsarjr121@gmail.com'
   users = userSheet.find({
-    email: 'binsarjr121@gmail.com',
+    email: {
+      equal: 'binsarjr121@gmail.com',
+    },
   })
+  Logger.log('equal')
+  Logger.log(users)
+
+  users = userSheet.find({
+    email: {
+      not: { equal: 'binsarjr121@gmail.com' },
+    },
+  })
+  Logger.log('not equal')
+  Logger.log(users)
+
+  Logger.log('like')
+  Logger.log(
+    userSheet.find({
+      email: {
+        like: '%gmail.com',
+      },
+    }),
+  )
+
+  Logger.log('not like')
+  Logger.log(
+    userSheet.find({
+      email: {
+        not: {
+          like: '%gmail.com',
+        },
+      },
+    }),
+  )
 
   // Get all data with limit 2
   users = userSheet.find({
